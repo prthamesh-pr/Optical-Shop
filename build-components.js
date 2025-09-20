@@ -165,12 +165,33 @@ function buildHTML() {
         }
     }
     
-    // Write the final HTML file
-    const outputPath = path.join(__dirname, 'index-built.html');
+    // Ensure public directory exists
+    const publicDir = path.join(__dirname, 'public');
+    if (!fs.existsSync(publicDir)) {
+        fs.mkdirSync(publicDir, { recursive: true });
+    }
+
+    // Write the final HTML file to public directory
+    const outputPath = path.join(publicDir, 'index.html');
     fs.writeFileSync(outputPath, finalHTML, 'utf-8');
     
-    console.log('🎉 Build complete! Generated: index-built.html');
+    // Also keep the built file in root for local development
+    const rootOutputPath = path.join(__dirname, 'index-built.html');
+    fs.writeFileSync(rootOutputPath, finalHTML, 'utf-8');
+    
+    console.log('🎉 Build complete! Generated: public/index.html');
     console.log('📁 File size:', Math.round(fs.statSync(outputPath).size / 1024), 'KB');
+    
+    // Copy static assets to public directory
+    const staticFiles = ['styles.css', 'script.js'];
+    staticFiles.forEach(file => {
+        const srcPath = path.join(__dirname, file);
+        const destPath = path.join(publicDir, file);
+        if (fs.existsSync(srcPath)) {
+            fs.copyFileSync(srcPath, destPath);
+            console.log(`📋 Copied: ${file} to public/`);
+        }
+    });
 }
 
 // Run the build if this script is executed directly
