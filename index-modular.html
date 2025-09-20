@@ -1,0 +1,371 @@
+<!-- 
+==========================================================================
+                          VisionCare Optics Website
+                        Main Index - Component Assembly
+==========================================================================
+
+This file serves as the main entry point that combines all modular components
+into a complete website. Each section is cleanly separated and can be easily
+maintained, updated, or replaced independently.
+
+Component Structure:
+- header.html: Navigation, head tags, mobile menu
+- hero.html: Hero section with stats and call-to-actions  
+- about.html: About section with team and features
+- services.html: Services grid and pricing
+- technology.html: Technology showcase and equipment
+- eye-model.html: Interactive 3D eye model
+- testimonials.html: Client testimonials and reviews
+- contact.html: Contact form, info, and quick actions
+- footer.html: Footer, social links, modals, and scripts
+
+==========================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionCare Optics - Premium Eye Care Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 3D Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <!--
+    ==========================================================================
+                                NAVIGATION HEADER
+    ==========================================================================
+    -->
+    
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>VisionCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#technology" class="nav-link">Technology</a></li>
+                <li><a href="#eye-model" class="nav-link">3D Model</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="toggleTheme" class="theme-btn">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+            <div class="mobile-nav-toggle">
+                <button id="mobileMenuBtn" class="theme-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>VisionCare</span>
+            </div>
+            <button id="closeMobileMenuBtn" class="theme-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#services" class="mobile-nav-link">Services</a></li>
+            <li><a href="#technology" class="mobile-nav-link">Technology</a></li>
+            <li><a href="#eye-model" class="mobile-nav-link">3D Model</a></li>
+            <li><a href="#testimonials" class="mobile-nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-theme-toggle">
+            <button id="mobileToggleTheme" class="theme-btn">
+                <i class="fas fa-moon" id="mobile-theme-icon"></i>
+            </button>
+            <span>Toggle Theme</span>
+        </div>
+    </div>
+
+    <!--
+    ==========================================================================
+                                  MAIN CONTENT
+    ==========================================================================
+    -->
+
+    <!-- HERO SECTION COMPONENT -->
+    <section id="home" class="hero">
+        <div class="hero-content glass">
+            <div class="eye-chart-bg">
+                <div class="eye-chart-line">E</div>
+                <div class="eye-chart-line">F P</div>
+                <div class="eye-chart-line">T O Z</div>
+                <div class="eye-chart-line">L P E D</div>
+                <div class="eye-chart-line">P E D F C Z</div>
+            </div>
+            <h1 class="hero-title">Premium Vision Care Solutions</h1>
+            <p class="hero-subtitle">Experience cutting-edge optical technology and personalized eye care from certified professionals. Your vision is our mission.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>25,000+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>4.9/5</h3>
+                    <p>Customer Rating</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>100%</h3>
+                    <p>Satisfaction</p>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <i class="fas fa-calendar-plus"></i>
+                    Book Free Eye Test
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('services')">
+                    <i class="fas fa-eye"></i>
+                    View Services
+                </button>
+            </div>
+            
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>ISO Certified</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Licensed Optometrists</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-microscope"></i>
+                    <span>Latest Technology</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-elements">
+            <div class="floating-icon icon-1">
+                <i class="fas fa-glasses"></i>
+            </div>
+            <div class="floating-icon icon-2">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="floating-icon icon-3">
+                <i class="fas fa-microscope"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION COMPONENT -->
+    <!-- [Include about.html content here] -->
+
+    <!-- SERVICES SECTION COMPONENT -->
+    <!-- [Include services.html content here] -->
+
+    <!-- TECHNOLOGY SECTION COMPONENT -->
+    <!-- [Include technology.html content here] -->
+
+    <!-- EYE MODEL SECTION COMPONENT -->
+    <!-- [Include eye-model.html content here] -->
+
+    <!-- TESTIMONIALS SECTION COMPONENT -->
+    <!-- [Include testimonials.html content here] -->
+
+    <!-- CONTACT SECTION COMPONENT -->
+    <!-- [Include contact.html content here] -->
+
+    <!--
+    ==========================================================================
+                              FOOTER & MODALS
+    ==========================================================================
+    -->
+
+    <!-- Eye Test Modal -->
+    <div id="eyeTestModal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3>Free Online Vision Screening</h3>
+                <span class="close" onclick="closeEyeTest()">&times;</span>
+            </div>
+            <div class="eye-test-content">
+                <div class="test-instructions">
+                    <p>This is a basic vision screening test. It cannot replace a comprehensive eye examination by a qualified optometrist.</p>
+                    <div class="test-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p>Sit 3 feet away from your screen</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p>Cover one eye with your hand</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p>Read the smallest line you can see clearly</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="vision-chart">
+                    <div class="chart-line line-1">E</div>
+                    <div class="chart-line line-2">F P</div>
+                    <div class="chart-line line-3">T O Z</div>
+                    <div class="chart-line line-4">L P E D</div>
+                    <div class="chart-line line-5">P E D F C Z</div>
+                    <div class="chart-line line-6">D F P O T E C</div>
+                    <div class="chart-line line-7">F E L O P Z D</div>
+                    <div class="chart-line line-8">T O F D P L Z E</div>
+                </div>
+                <div class="test-question">
+                    <p>What's the smallest line you can read clearly?</p>
+                    <div class="line-buttons">
+                        <button class="line-btn" data-line="1">Line 1</button>
+                        <button class="line-btn" data-line="2">Line 2</button>
+                        <button class="line-btn" data-line="3">Line 3</button>
+                        <button class="line-btn" data-line="4">Line 4</button>
+                        <button class="line-btn" data-line="5">Line 5</button>
+                        <button class="line-btn" data-line="6">Line 6</button>
+                        <button class="line-btn" data-line="7">Line 7</button>
+                        <button class="line-btn" data-line="8">Line 8</button>
+                    </div>
+                </div>
+                <div class="test-result" id="testResult" style="display: none;">
+                    <h4>Screening Results</h4>
+                    <p id="resultText"></p>
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Book Professional Eye Exam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-eye"></i>
+                        <span>VisionCare Optics</span>
+                    </div>
+                    <p>Your trusted partner for comprehensive eye care and premium optical solutions since 2008.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Eye Examinations</li>
+                        <li>Prescription Glasses</li>
+                        <li>Contact Lenses</li>
+                        <li>Sunglasses</li>
+                        <li>Repairs & Adjustments</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VisionCare Optics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Decorative Elements -->
+    <div class="gradient-circle circle1"></div>
+    <div class="gradient-circle circle2"></div>
+    <div class="gradient-circle circle3"></div>
+    <div class="gradient-circle circle4"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--
+==========================================================================
+                              IMPLEMENTATION NOTES
+==========================================================================
+
+HOW TO USE THESE COMPONENTS:
+
+1. **For Development**: Use individual component files for easier maintenance
+   - Edit specific sections in their respective component files
+   - Test individual components independently
+   - Easier version control and collaboration
+
+2. **For Production**: Include components using server-side includes
+   - PHP: <?php include 'components/header.html'; ?>
+   - Server-side includes: <!--#include file="components/header.html" -->
+   - Template engines: {{> components/header.html}}
+
+3. **Component Order**:
+   - header.html (navigation & head)
+   - hero.html (landing section)
+   - about.html (company info)
+   - services.html (services grid)
+   - technology.html (equipment showcase)
+   - eye-model.html (3D interactive model)
+   - testimonials.html (client reviews)
+   - contact.html (forms & info)
+   - footer.html (footer & modals)
+
+4. **Maintenance Benefits**:
+   - Update navigation in one file affects entire site
+   - Easy A/B testing of individual sections
+   - Simplified debugging and error isolation
+   - Better code organization and team collaboration
+   - Reusable components across multiple pages
+
+==========================================================================
+-->

@@ -1,0 +1,27 @@
+{
+  "name": "visioncare-optics-website",
+  "version": "1.0.0",
+  "description": "Component-based VisionCare Optics website with build system",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build-components.js",
+    "start": "npm run build && python -m http.server 8000",
+    "start:windows": "npm run build && python -m http.server 8000",
+    "dev": "npm run build && echo 'Open http://localhost:8000/index-built.html in your browser'"
+  },
+  "keywords": [
+    "eye-care",
+    "optical",
+    "responsive-design",
+    "component-based",
+    "glassmorphism"
+  ],
+  "author": "VisionCare Optics",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visioncare/website.git"
+  },
+  "homepage": "https://visioncare-optics.com"
+}
