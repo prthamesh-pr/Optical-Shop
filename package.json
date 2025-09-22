@@ -1,16 +1,14 @@
 {
-  "name": "visioncare-optics-website",
+  "name": "sangam-optics-website",
   "version": "1.0.0",
-  "description": "Component-based VisionCare Optics website with build system",
+  "description": "Component-based Sangam website with build system",
   "main": "index.html",
   "scripts": {
-    "build": "node build-components.js",
-    "start": "npm run build && python -m http.server 8000 --directory public",
-    "start:windows": "npm run build && python -m http.server 8000 --directory public",
-    "dev": "npm run build && echo 'Open http://localhost:8000 in your browser'",
-    "vercel-build": "node build-components.js",
-    "clean": "rmdir /s /q public 2>nul || rm -rf public",
-    "prebuild": "npm run clean"
+    "build": "echo 'Components are loaded dynamically - no build needed'",
+    "start": "python -m http.server 8000",
+    "start:windows": "python -m http.server 8000",
+    "dev": "echo 'Open http://localhost:8000 in your browser'",
+    "serve": "python -m http.server 8000"
   },
   "keywords": [
     "eye-care",
@@ -19,12 +17,12 @@
     "component-based",
     "glassmorphism"
   ],
-  "author": "VisionCare Optics",
+  "author": "Sangam",
   "license": "MIT",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/visioncare/website.git"
+    "url": "https://github.com/sangam/website.git"
   },
-  "homepage": "https://visioncare-optics.com"
+  "homepage": "https://sangam-optics.com"
 }

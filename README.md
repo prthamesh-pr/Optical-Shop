@@ -1,4 +1,4 @@
-# VisionCare Optics Website - Component-Based Architecture
+# Sangam Website - Component-Based Architecture
 
 ## 🏗️ Project Structure
 
@@ -150,5 +150,5 @@ For questions about the component architecture:
 
 ---
 
-**Built with ❤️ for VisionCare Optics**
+**Built with ❤️ for Sangam**
 *Component-based architecture for maintainable, scalable web development*

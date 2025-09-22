@@ -1,6 +1,6 @@
 /*
 ==========================================================================
-                          VisionCare Optics Website
+                          Sangam Website
                          Interactive JavaScript Controller
 ==========================================================================
 */
@@ -327,7 +327,7 @@ function initFormValidation() {
 
         // Format message for WhatsApp
         const fullMessage = `
-Hello VisionCare, I would like to book an appointment.
+Hello Sangam, I would like to book an appointment.
 
 *Name:* ${firstName} ${lastName}
 *Email:* ${email}

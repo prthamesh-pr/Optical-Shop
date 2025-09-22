@@ -1,4 +1,4 @@
-# Vercel Deployment for VisionCare Optics
+# Vercel Deployment for Sangam
 
 ## 🚀 Deployment Configuration
 

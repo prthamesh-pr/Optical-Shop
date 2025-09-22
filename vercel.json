@@ -1,7 +1,6 @@
 {
   "version": 2,
-  "name": "visioncare-optics-website",
-  "outputDirectory": "public",
+  "name": "sangam-optics-website",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",

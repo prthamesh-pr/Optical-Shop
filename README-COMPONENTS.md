@@ -1,4 +1,4 @@
-# VisionCare Optics - Component-Based Structure
+# Sangam - Component-Based Structure
 
 ## 📁 Project Structure
 
