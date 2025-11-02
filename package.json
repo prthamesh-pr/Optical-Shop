@@ -1,0 +1,28 @@
+{
+  "name": "sangam-optics-website",
+  "version": "1.0.0",
+  "description": "Component-based Sangam website with build system",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Components are loaded dynamically - no build needed'",
+    "start": "python -m http.server 8000",
+    "start:windows": "python -m http.server 8000",
+    "dev": "echo 'Open http://localhost:8000 in your browser'",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "eye-care",
+    "optical",
+    "responsive-design",
+    "component-based",
+    "glassmorphism"
+  ],
+  "author": "Sangam",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sangam/website.git"
+  },
+  "homepage": "https://sangam-optics.com"
+}
